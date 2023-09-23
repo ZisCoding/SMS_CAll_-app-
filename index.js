@@ -25,8 +25,8 @@ app.get('/',(req,res)=>{
 })
 
 // twillio config  for text sms and call
-const accountSid ="AC7e79a17d83159b671a4a2ffe8b26a313";
-const authToken ="9c03e03a488069430942f3d57c3918e4";
+const accountSid ="AC24e54eac7cc1e7d36bf50ec8571d4245";
+const authToken ="177e61171163b616e19f2e3dbe9dc63b";
 const client = require('twilio')(accountSid, authToken);
 
 //ultramsg config for whatsapp
@@ -56,8 +56,8 @@ app.post('/sendSms',(req,res)=>{
       res.redirect('back');
     })
     .catch((error)=>{
-      console.log("error");
-      res.end("error in sending message");
+      console.log(error);
+      res.end("error in sending message",);
       return;
     })
 
