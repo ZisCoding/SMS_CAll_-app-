@@ -25,8 +25,8 @@ app.get('/',(req,res)=>{
 })
 
 // twillio config  for text sms and call
-const accountSid ="AC24e54eac7cc1e7d36bf50ec8571d4245";
-const authToken ="177e61171163b616e19f2e3dbe9dc63b";
+const accountSid ="AC7e79a17d83159b671a4a2ffe8b26a313";
+const authToken ="15bb2e357a80e7c0ac49fdd4c11c5908";
 const client = require('twilio')(accountSid, authToken);
 
 //ultramsg config for whatsapp
@@ -48,7 +48,7 @@ app.post('/sendSms',(req,res)=>{
     client.messages
     .create({
         body: 'This is a testing message sent by zeeshan',
-        from: '+13168548285',
+        from: '+17855723763',
         to: `+91${req.body.num}`
     })
     .then(message => {
@@ -70,7 +70,7 @@ app.post("/makeCall",(req,res)=>{
       .create({
          url: 'http://demo.twilio.com/docs/voice.xml',
          to: `+91${req.body.num}`,
-         from: '+13168548285',
+         from: '+17855723763',
        })
       .then(call => {
         console.log(call.sid)
@@ -81,7 +81,7 @@ app.post("/makeCall",(req,res)=>{
         return;
       })
 
-      res.redirect('back');
+      
 })
 
 app.post("/sendWhatsapp",(req,res)=>{
