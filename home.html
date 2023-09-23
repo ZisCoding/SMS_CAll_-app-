@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibtree</title>
+    <style>
+
+        body{
+            background-color: cyan;
+        }
+
+        #form-container1{
+            display: flex;
+
+        }
+
+        form{
+            width: 50%;
+            margin: 10vh  auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            padding: .5em;
+            border: 2px solid black;
+            border-radius: 1em;
+        }
+        button{
+            padding: .5em;
+            background-color: transparent;
+            border-radius: 1em;
+            outline: none;
+        }
+        button:hover{
+            box-shadow: inset 0px 50px 2px 1px rgba(0, 0, 0, 0.2) ;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-contaiener">
+        <form action="/sendSms" method="post">
+            <input name="num" required placeholder="Enter Number"><br>
+            <button type="submit">Send SMS</button>
+        </form>
+
+        <form action="/makeCall" method="post">
+            <input name="num" required placeholder="Enter Number"><br>
+            <button type="submit">Make Call</button>
+        </form>
+
+        <form action="/sendWhatsapp" method="post">
+            <input name="num" required placeholder="Enter Number"><br>
+            <button type="submit">Send Whatsapp</button>
+        </form>
+
+    </div>
+</body>
+</html>
